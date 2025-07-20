@@ -1,0 +1,21 @@
+Invoice Number: INV-2024-001
+Date: 2024-01-15
+From: ABC Company Ltd.
+123 Business Street
+City, State 12345
+
+Bill To: XYZ Corporation
+456 Client Avenue
+Town, State 67890
+
+Description                         Qty    Price      Total
+Web Development Services             1      $2,500     $2,500
+Database Setup                       1      $800       $800
+Testing & QA                         1      $400       $400
+
+Subtotal:                                   $3,700
+VAT (10%):                                  $370
+Total Amount:                               $4,070
+
+Payment Terms: Net 30 days
+Thank you for your business!

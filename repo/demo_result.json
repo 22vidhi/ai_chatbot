@@ -1,0 +1,27 @@
+{
+  "invoice_number": "INV-2024-001",
+  "date": "24-01-15",
+  "supplier_name": "",
+  "total_amount": "3700",
+  "subtotal": "3700",
+  "vat_amount": "370",
+  "line_items": [
+    {
+      "description": "Invoice #INV-2024-001 Date: 2024-01-15 From: ABC Company Ltd. Bill To: XYZ Corporation Description Qty Price Total Web Development Services",
+      "quantity": "1",
+      "unit_price": "2500",
+      "total": "2500"
+    }
+  ],
+  "confidence_scores": {
+    "invoice_number": 0.9,
+    "date": 0.8,
+    "supplier_name": 0.0,
+    "total_amount": 0.85,
+    "subtotal": 0.85,
+    "vat_amount": 0.85,
+    "line_items": 0.8
+  },
+  "extraction_timestamp": "2025-07-21T00:58:15.665359",
+  "extraction_method": "rule_based"
+}

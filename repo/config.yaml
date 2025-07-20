@@ -1,0 +1,86 @@
+# Smart Invoice AI System Configuration
+
+# Application Settings
+app:
+  title: "Smart Invoice AI System"
+  version: "1.0.0"
+  debug: false
+  max_file_size_mb: 10
+  supported_languages: ["en", "fr", "de", "es"]
+
+# OCR Settings
+ocr:
+  engine: "tesseract"
+  language: "eng"
+  dpi: 300
+  preprocessing:
+    enabled: true
+    denoise: true
+    deskew: true
+    enhance_contrast: true
+
+# Field Extraction Settings
+extraction:
+  confidence_threshold: 0.7
+  required_fields:
+    - invoice_number
+    - date
+    - supplier_name
+    - total_amount
+    - vat_amount
+    - line_items
+  
+  patterns:
+    invoice_number:
+      - "invoice\\s*#?\\s*:?\\s*([A-Z0-9\\-]+)"
+      - "inv\\s*#?\\s*:?\\s*([A-Z0-9\\-]+)"
+    date:
+      - "date\\s*:?\\s*(\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4})"
+    total_amount:
+      - "total\\s*:?\\s*\\$?([0-9,]+\\.?\\d*)"
+
+# Model Training Settings
+training:
+  auto_retrain_threshold: 10
+  min_training_samples: 5
+  validation_split: 0.2
+  max_epochs: 10
+  batch_size: 8
+  model_versions_to_keep: 5
+
+# Database Settings
+database:
+  type: "sqlite"
+  path: "database/invoice_system.db"
+  backup_enabled: true
+  backup_interval_hours: 24
+
+# UI Settings
+ui:
+  theme: "light"
+  sidebar_expanded: true
+  show_confidence_scores: true
+  enable_batch_processing: true
+  max_files_per_batch: 50
+
+# Performance Settings
+performance:
+  cache_enabled: true
+  cache_ttl_seconds: 3600
+  parallel_processing: false
+  max_workers: 4
+
+# Security Settings
+security:
+  enable_file_validation: true
+  max_file_size_bytes: 10485760  # 10MB
+  allowed_extensions: [".pdf", ".png", ".jpg", ".jpeg", ".csv", ".txt"]
+  sanitize_filenames: true
+
+# Logging Settings
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+  max_size_mb: 10
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
